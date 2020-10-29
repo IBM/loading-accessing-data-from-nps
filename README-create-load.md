@@ -101,7 +101,9 @@ database="system"
 
 ### 6. Loading or Unloading data from external source
 
-`nzpy` also supports streaming data loads and unloads. There are quite a few variations we can do here. You can load data from local files to NPS uses streaming transient external table with `REMOTESOURCE 'ODBC'` option as show below:
+> NOTE: Before loading or unloading the data, upload `orders.tbl` from the cloned repository folder by going to `doc/source/data`. In the project home page, on the `Assets` tab, click the data icon, and browse to upload the file. You will have to unzip the data locally first before you upload.
+
+`nzpy` also supports streaming data loads and unloads. There are quite a few variations we can do here. You can load data from local files to NPS which uses streaming transient external table with `REMOTESOURCE 'ODBC'` option as shown below:
 
 ```python
 with con.cursor() as cursor:
@@ -366,7 +368,7 @@ df.avg = df.avg.astype(float)
 df.month = df.month.astype(int)
 df
 ```
- The output of the above query is show below:
+ The output of the above query is shown below:
 
 ![Australian dataset analyze](doc/source/images/aus-analyze-data.png)
 
