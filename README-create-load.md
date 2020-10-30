@@ -103,6 +103,8 @@ database="system"
 
 > NOTE: Before loading or unloading the data, upload `orders.tbl` from the cloned repository folder by going to `doc/source/data`. In the project home page, on the `Assets` tab, click the data icon, and browse to upload the file. You will have to unzip the data locally first before you upload.
 
+![Upload data assets](doc/source/images/upload-data-assets-1.png)
+
 `nzpy` also supports streaming data loads and unloads. There are quite a few variations we can do here. You can load data from local files to NPS which uses streaming transient external table with `REMOTESOURCE 'ODBC'` option as shown below:
 
 ```python
