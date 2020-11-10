@@ -12,6 +12,10 @@ In this code pattern, we will be using energy price and Australian weather stati
 
 ![architecture](doc/source/images/architecture.png)
 
+1. User loads Jupyter notebook to IBM Cloud Pak for Data.
+1. User connect to Netezza using NZPY connector.
+1. User loads and analyzes data from Netezza Performance Server.
+
 ## Included components
 
 * [Netezza Performance Server](https://www.ibm.com/products/netezza): IBM Netezza® Performance Server for IBM Cloud Pak® for Data is an advanced data warehouse and analytics platform available both on premises and on cloud.
