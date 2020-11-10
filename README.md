@@ -10,7 +10,7 @@ In this code pattern, we will be using energy price and Australian weather stati
 
 # Flow
 
-TBD
+![architecture](doc/source/images/architecture.png)
 
 ## Included components
 
@@ -79,7 +79,7 @@ There are two ways you can add connection to the notebook.  Use one of the ways 
 * Select `From URL` tab and fill in the name and provide the `Notebook URL` as below, and click `Create notebook`.
 
 ```bash
-https://raw.github.com/
+https://raw.githubusercontent.com/IBM/loading-accessing-data-from-nps/main/doc/source/notebooks/Netezza-dml-ddl.ipynb
 ```
 
 ### 4. Install NZPY
