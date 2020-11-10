@@ -419,9 +419,7 @@ The output of the above plotting is shown below:
 
 At the end of this, you are now familiar with Netezza datbase and how you can use `nzpy` library to connect to the database, load and retireve data, analyze and visualize the data.
 
-In the next [code pattern](https://github.com/IBM/), we will deep dive into NPS In-Database analytics functions and create machine learning models to predict. For this we will be using energy dataset.
-
-
+In the next [code pattern](https://github.com/IBM/prediction-using-netezza-in-database-analytics-functions) which is part of the learning path, we will deep dive into NPS In-Database analytics functions and create machine learning models to predict and forecast  energy price data set.. For this we will be using energy dataset.
 
 # License
 
