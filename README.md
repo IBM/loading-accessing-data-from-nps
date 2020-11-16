@@ -25,17 +25,25 @@ In this code pattern, we will be using energy price and Australian weather stati
 
 ## Steps
 
-1. [Create a new project in CP4D](#1-create-a-new-project-in-cp4d)
-1. [Add connection to Netezza server](#2-add-connection-to-netezza-server)
-1. [Load notebook to your project](#3-load-notebook-to-your-project)
-1. [Install NZPY](#4-install-NZPY)
-1. [Configure NPS connection in notebook](#5-configure-NPS-connection-in-notebook)
-1. [Loading or Unloading data from external source](#6-loading-or-unloading-data-from-external-source)
-1. [Load data from other data sources](#7-load-data-from-other-data-sources)
-1. [Load data from object Store](#8-load-data-from-object-store)
-1. [Loading and analyzing Australian weather station data](#9-loading-and-analyzing-australian-weather-station-data)
+1. [Clone the repo](#1-clone-the-repo)
+1. [Create a new project in CP4D](#2-create-a-new-project-in-cp4d)
+1. [Add connection to Netezza server](#3-add-connection-to-netezza-server)
+1. [Load notebook to your project](#4-load-notebook-to-your-project)
+1. [Install NZPY](#5-install-NZPY)
+1. [Configure NPS connection in notebook](#6-configure-NPS-connection-in-notebook)
+1. [Loading or Unloading data from external source](#7-loading-or-unloading-data-from-external-source)
+1. [Load data from other data sources](#8-load-data-from-other-data-sources)
+1. [Load data from object Store](#9-load-data-from-object-store)
+1. [Loading and analyzing Australian weather station data](#10-loading-and-analyzing-australian-weather-station-data)
 
-### 1. Create a new project in CP4D
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/IBM/loading-accessing-data-from-nps.git
+
+```
+
+### 2. Create a new project in CP4D
 
 * Log into IBM Cloud Pak for Data and create a new project, by selecting `Projects` from hamburger menu and clicking `New Project +`.
 
@@ -50,11 +58,7 @@ Then, choose `Analytics project`, and select `Create empty project`, provide the
 ![Project created](doc/source/images/project-created.png)
 
 
-### 2. Add connection to Netezza server
-
-There are two ways you can add connection to the notebook.  Use one of the ways to add connection to NPS.
-
-#### Adding connection using CPD
+### 3. Add connection to Netezza server
 
 * From the project page select, `Add to project +`, choose `Connection`
 
@@ -74,7 +78,7 @@ There are two ways you can add connection to the notebook.  Use one of the ways 
 
 >NOTE: Save the name of the connection for later use.
 
-### 3. Load notebook to your project
+### 4. Load notebook to your project
 
 * From the project page, click `Add to project +`, and select `notebook` from the options:
 
@@ -86,14 +90,14 @@ There are two ways you can add connection to the notebook.  Use one of the ways 
 https://raw.githubusercontent.com/IBM/loading-accessing-data-from-nps/main/doc/source/notebooks/Netezza-dml-ddl.ipynb
 ```
 
-### 4. Install NZPY
+### 5. Install NZPY
 
 Run the cell that contains `pip install nzpy` which is the only pre-requisite for this notebook. `nzpy` lets us connect to the server and allow us to run DDL and DML SQLs.
 
 ![add notebook](doc/source/images/install-prereq.png)
 
 
-### 5. Configure NPS connection in notebook
+### 6. Configure NPS connection in notebook
 
 * Open the notebook in edit mode, and in the cell with title `Connecting to the database`, provide the name of the connection that you created earlier in step 2.
 
@@ -120,7 +124,7 @@ database="system"
 
 ![add notebook](doc/source/images/configure-connection.png)
 
-### 6. Loading or Unloading data from external source
+### 7. Loading or Unloading data from external source
 
 > NOTE: Before loading or unloading the data, upload `orders.tbl` from the cloned repository folder by going to `doc/source/data`. In the project home page, on the `Assets` tab, click the data icon, and browse to upload the file. You will have to unzip the data locally first before you upload.
 
@@ -156,7 +160,7 @@ pd.read_csv('/tmp/orders.csv', delimiter='|')
 
 ```
 
-### 7. Load data from other data sources
+### 8. Load data from other data sources
 
 Data sources, like external servers, github etc. can be used by streaming data from the source through the python data pipeline. The python code is using nzpy which read data from external sources and connect that directly to `nzpy` pipe via a named pipe.
 
@@ -213,7 +217,7 @@ with con.cursor() as cursor:
 streamer.join()
 ```
 
-### 8. Load data from Object Store
+### 9. Load data from Object Store
 
 NPS can load and unload data from object stores like Amazon S3 and IBM Cloud object store. This works by using Netezza External Tables to read from and write to object store.
 
@@ -276,7 +280,7 @@ df.head()
 ![Covid Cases Visualize](doc/source/images/covid-visualize.png)
 
 
-### 9. Loading and analyzing Australian weather station data
+### 10. Loading and analyzing Australian weather station data
 
 In this section, we will use Python and Netezza Performance Server, to load and analyze the data on `Australian temperatures and rainfall` published publically.
 
